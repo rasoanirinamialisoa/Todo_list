@@ -61,8 +61,18 @@ public class ConnectionToDatabase {
             Connection connection = connectionToDatabase.getConnection();
             // Effectuer d'autres opérations avec la connexion
         } catch (ConnectionException e) {
-            System.out.println("Failed to connect to the database: " + e.getMessage());
+            System.out.println("Database connection failed: " + e.getMessage());
             // Traiter l'échec de la connexion
+        }
+    }
+    public void closeConnection() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+                System.out.println("Connection to the database closed.");
+            }
+        } catch (SQLException e) {
+            // Gérer l'exception appropriée ici
         }
     }
 }
