@@ -57,7 +57,7 @@ public class TodoMenu {
     }
 
     private static void printMenu() {
-        System.out.println("===== TODO Menu =====");
+        System.out.println("====== TODO Menu ======");
         System.out.println("1: Add a new task");
         System.out.println("2: Find a task");
         System.out.println("3: Show all tasks");
@@ -94,7 +94,7 @@ public class TodoMenu {
     }
 
     private static void findTask() throws SQLException {
-        System.out.print("Enter the task ID: ");
+        System.out.print("Enter task ID: ");
         int taskId = scanner.nextInt();
         Task foundTask = findTaskById(taskId);
         if (foundTask != null) {
@@ -116,13 +116,13 @@ public class TodoMenu {
     }
 
     private static void updateTask() throws SQLException {
-        System.out.print("Enter the task ID to update: ");
+        System.out.print("Enter task ID to update: ");
         int taskIdToUpdate = scanner.nextInt();
         scanner.nextLine();
 
         Task taskToUpdate = findTaskById(taskIdToUpdate);
         if (taskToUpdate != null) {
-            System.out.println("Enter the new details for the task:");
+            System.out.println("Enter new details for the task:");
             System.out.print("Title: ");
             String newTitle = scanner.nextLine();
             System.out.print("Description: ");
